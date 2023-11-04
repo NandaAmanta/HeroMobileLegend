@@ -25,7 +25,7 @@ abstract public class Hero {
         this.pointDefense = pointDefense;
         this.pointAttack = pointAttack;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -74,6 +74,11 @@ abstract public class Hero {
         this.pointAttack = pointAttack;
     }
 
+    /**
+     * Attacking the enemy
+     *
+     * @param enemy
+     */
     public void attack(Hero enemy) {
 
         //validate enemy HP
@@ -94,14 +99,17 @@ abstract public class Hero {
         enemy.setHp(enemyCurrentHp);
     }
 
+    /**
+     * Restore Hero's Hp
+     */
     public void restoreHp() {
         int newHp = this.getHp() + 15;
         if (newHp >= this.getMaxHp()) {
             newHp = this.getMaxHp();
         }
         this.setHp(newHp);
-        
-        System.out.println("Hp " + this.getName() + " : " + this.getHp()+ "/" + this.getMaxHp());
+
+        System.out.println("Hp " + this.getName() + " : " + this.getHp() + "/" + this.getMaxHp());
     }
 
 }

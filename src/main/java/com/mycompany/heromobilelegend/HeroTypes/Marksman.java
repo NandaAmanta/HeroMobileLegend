@@ -23,14 +23,20 @@ public class Marksman extends Hero {
         }
 
         System.out.println(this.getHp() + " Menembak " + enemy.getName());
+
+        // Get Enemy Hp after get damage
         int enemyCurrentHp = enemy.getHp() - (this.getPointAttack() - enemy.getPointDefense() + (10 * this.getLevel()));
-        if (enemyCurrentHp < 0) {
+
+        // if enemyCurrentHp is lower or equal 0 , it is died
+        if (enemyCurrentHp <= 0) {
             enemyCurrentHp = 0;
             System.out.println(enemy.getName() + " telah mati");
             this.setLevel(this.getLevel() + 1);
         } else {
             System.out.println("Sisa HP " + enemy.getName() + " adalah " + enemyCurrentHp);
         }
+
+        // set enemy current HP
         enemy.setHp(enemyCurrentHp);
     }
 }

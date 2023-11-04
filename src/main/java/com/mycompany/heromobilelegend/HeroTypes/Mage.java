@@ -50,15 +50,22 @@ public class Mage extends Hero {
 
         System.out.println(this.getName() + " menyerang dengan sihir ke " + enemy.getName());
 
+        // Get enemy Hp after get damage;
         int enemyCurrentHp = enemy.getHp() - (this.getPointAttack() + (10 * this.getLevel()));
-        if (enemyCurrentHp < 0) {
+        
+        // if enemyCurrentHp is lower or equal 0, it is died
+        if (enemyCurrentHp <= 0) {
             enemyCurrentHp = 0;
             System.out.println(enemy.getName() + " telah mati");
             this.setLevel(this.getLevel() + 1);
         } else {
             System.out.println("Sisa HP " + enemy.getName() + " adalah " + enemyCurrentHp);
         }
+        
+        // mana cost
         this.mana -= 10;
+        
+        // set enemy hp
         enemy.setHp(enemyCurrentHp);
     }
 
