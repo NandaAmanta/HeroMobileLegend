@@ -14,8 +14,6 @@ abstract public class Hero {
     private int maxHp;
     private int hp;
     private int level;
-    private int mana;
-    private int maxMana;
     private int pointDefense;
     private int pointAttack;
 
@@ -24,8 +22,6 @@ abstract public class Hero {
         this.maxHp = maxHp;
         this.hp = maxHp;
         this.level = 1;
-        this.mana = maxMana;
-        this.maxMana = maxMana;
         this.pointDefense = pointDefense;
         this.pointAttack = pointAttack;
     }
@@ -60,22 +56,6 @@ abstract public class Hero {
 
     public void setHp(int hp) {
         this.hp = hp;
-    }
-
-    public int getMana() {
-        return mana;
-    }
-
-    public void setMana(int mana) {
-        this.mana = mana;
-    }
-
-    public int getMaxMana() {
-        return maxMana;
-    }
-
-    public void setMaxMana(int maxMana) {
-        this.maxMana = maxMana;
     }
 
     public int getPointDefense() {

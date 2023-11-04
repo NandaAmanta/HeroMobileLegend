@@ -10,12 +10,28 @@ package com.mycompany.heromobilelegend.HeroTypes;
  */
 public class Mage extends Hero {
 
+    private int mana;
+    private int maxMana;
+    
     public Mage(String name, int maxHp, int pointDefense, int pointAttack, int maxMana) {
         super(name, maxHp, pointDefense, pointAttack, maxMana);
     }
-    
-    
 
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public int getMaxMana() {
+        return maxMana;
+    }
+
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
+    }
     @Override
     public void attack(Hero enemy) {
 
