@@ -38,6 +38,11 @@ public class Mage extends Hero {
     @Override
     public void attack(Hero enemy) {
 
+        if (this.getHp() <= 0) {
+            System.out.println(this.getName() + " sudah mati, tidak bisa melakukan aksi.");
+            return;
+        }
+
         //validate enemy HP
         if (enemy.getHp() <= 0) {
             System.out.println(enemy.getName() + " telah mati");
@@ -54,7 +59,7 @@ public class Mage extends Hero {
 
         // Get enemy Hp after get damage;
         int enemyCurrentHp = enemy.getHp() - (this.getPointAttack() + (10 * this.getLevel()));
-        
+
         // if enemyCurrentHp is lower or equal 0, it is died
         if (enemyCurrentHp <= 0) {
             enemyCurrentHp = 0;
@@ -63,15 +68,20 @@ public class Mage extends Hero {
         } else {
             System.out.println("Sisa HP " + enemy.getName() + " adalah " + enemyCurrentHp);
         }
-        
+
         // mana cost
         this.mana -= 10;
-        
+
         // set enemy hp
         enemy.setHp(enemyCurrentHp);
     }
 
     public void restoreMana() {
+        if (this.getHp() <= 0) {
+            System.out.println(this.getName() + " sudah mati, tidak bisa melakukan aksi.");
+            return;
+        }
+        
         int newMana = this.getMana() + 5;
         if (newMana >= this.getMaxMana()) {
             newMana = this.getMaxMana();

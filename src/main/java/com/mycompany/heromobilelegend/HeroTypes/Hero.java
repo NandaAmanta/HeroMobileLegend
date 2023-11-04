@@ -80,7 +80,10 @@ abstract public class Hero {
      * @param enemy
      */
     public void attack(Hero enemy) {
-
+        if (this.getHp() <= 0) {
+            System.out.println(this.getName() + " sudah mati, tidak bisa melakukan aksi.");
+            return;
+        }
         //validate enemy HP
         if (enemy.getHp() <= 0) {
             System.out.println(enemy.getName() + " telah mati");
@@ -103,6 +106,10 @@ abstract public class Hero {
      * Restore Hero's Hp
      */
     public void restoreHp() {
+        if (this.getHp() <= 0) {
+            System.out.println(this.getName() + " sudah mati, tidak bisa melakukan aksi.");
+            return;
+        }
         int newHp = this.getHp() + 15;
         if (newHp >= this.getMaxHp()) {
             newHp = this.getMaxHp();

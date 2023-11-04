@@ -9,13 +9,18 @@ package com.mycompany.heromobilelegend.HeroTypes;
  * @author I Putu Nanda Amanta
  */
 public class Tank extends Hero {
-    
+
     public Tank(String name, int maxHp, int pointDefense, int pointAttack) {
         super(name, maxHp, pointDefense, pointAttack);
     }
 
     @Override
     public void restoreHp() {
+        if (this.getHp() <= 0) {
+            System.out.println(this.getName() + " sudah mati, tidak bisa melakukan aksi.");
+            return;
+        }
+
         int newHp = this.getHp() + 25;
         if (newHp >= this.getMaxHp()) {
             newHp = this.getMaxHp();
