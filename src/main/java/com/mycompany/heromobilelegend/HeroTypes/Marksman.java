@@ -11,9 +11,9 @@ package com.mycompany.heromobilelegend.HeroTypes;
 public class Marksman extends Hero {
 
     public Marksman(String name, int maxHp, int pointDefense, int pointAttack) {
-        super(name, maxHp, pointDefense, pointAttack, 0);
+        super(name, maxHp, pointDefense, pointAttack);
     }
-    
+
     public void attack(Hero enemy) {
 
         //validate enemy HP

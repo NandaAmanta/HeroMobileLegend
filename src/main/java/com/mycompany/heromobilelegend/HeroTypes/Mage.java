@@ -14,7 +14,9 @@ public class Mage extends Hero {
     private int maxMana;
 
     public Mage(String name, int maxHp, int pointDefense, int pointAttack, int maxMana) {
-        super(name, maxHp, pointDefense, pointAttack, maxMana);
+        super(name, maxHp, pointDefense, pointAttack);
+        this.mana = maxMana;
+        this.maxMana = maxMana;
     }
 
     public int getMana() {

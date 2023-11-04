@@ -17,7 +17,7 @@ abstract public class Hero {
     private int pointDefense;
     private int pointAttack;
 
-    public Hero(String name, int maxHp, int pointDefense, int pointAttack, int maxMana) {
+    public Hero(String name, int maxHp, int pointDefense, int pointAttack) {
         this.name = name;
         this.maxHp = maxHp;
         this.hp = maxHp;
