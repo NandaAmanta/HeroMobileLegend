@@ -12,7 +12,7 @@ public class Mage extends Hero {
 
     private int mana;
     private int maxMana;
-    
+
     public Mage(String name, int maxHp, int pointDefense, int pointAttack, int maxMana) {
         super(name, maxHp, pointDefense, pointAttack, maxMana);
     }
@@ -32,6 +32,7 @@ public class Mage extends Hero {
     public void setMaxMana(int maxMana) {
         this.maxMana = maxMana;
     }
+
     @Override
     public void attack(Hero enemy) {
 
@@ -57,6 +58,7 @@ public class Mage extends Hero {
         } else {
             System.out.println("Sisa HP " + enemy.getName() + " adalah " + enemyCurrentHp);
         }
+        this.mana -= 10;
         enemy.setHp(enemyCurrentHp);
     }
 
