@@ -6,6 +6,7 @@ package com.mycompany.heromobilelegend;
 
 import com.mycompany.heromobilelegend.HeroTypes.Mage;
 import com.mycompany.heromobilelegend.HeroTypes.Marksman;
+import com.mycompany.heromobilelegend.HeroTypes.Support;
 
 /**
  *
@@ -22,5 +23,10 @@ public class HeroMobileLegend {
         layla.attack(eudora);
         layla.attack(eudora);
         layla.attack(eudora);
+        
+        
+        Support rafaela = new Support("Rafaela", 700, 10, 15);
+        rafaela.revive(eudora);
+        
     }
 }
